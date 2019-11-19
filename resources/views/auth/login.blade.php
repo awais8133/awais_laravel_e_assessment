@@ -21,7 +21,7 @@
 </head>
 
 <body>
-        <a href="#" class="signup">Signup</a>
+    <a href="{{route('auth.sign-up')}}" class="signup">Signup</a>
 
 
     <div class="wrapper">
@@ -33,12 +33,12 @@
             <div class="form-container">
 
                 <h1 class="center title">E-Assessment System</h1>
-                <form method="post" action="#">
+                <form method="post" action="{{route('auth.login-user')}}">
                     <h1 class="center title">Login</h1>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}" />
                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" autocomplete="off" />
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" autocomplete="off" />
                     </div>
                     <div class="form-group">
                         <label>Password</label>

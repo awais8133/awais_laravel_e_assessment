@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('index-layout')
 
 @section('title','Create Class')
 
@@ -14,7 +14,7 @@
 
 
 @section('content')
-<form method="post" action="#">
+<form method="post" action="{{route('teachers.classes.store')}}">
     <div class="row">
 
         <input name="_token" type="hidden" value="{{ csrf_token() }}" />
@@ -44,7 +44,7 @@
     <div class="row">
         <div class="col">
             <div class="text-right">
-                <button type="submit" class="btn btn-danger">Cancel</button>
+                <button type="reset" class="btn btn-danger">Cancel</button>
                 <button type="submit" class="btn btn-primary">Create Class</button>
             </div>
         </div>

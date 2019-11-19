@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #2699FB;
+    --secondary-color: #fff;
+}
+
+form .form-group input{
+    display: block;
+    /* width: 400px; */
+    outline: none;
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1rem ;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+form .form-group label{
+    font-weight: bold;
+}
+
+form .form-group textarea,
+form .form-group select{
+    border: 1px solid var(--primary-color);
+}

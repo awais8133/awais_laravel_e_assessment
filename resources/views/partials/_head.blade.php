@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/hero-section.css') }}">
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
 <title>E-Assessment | @yield('title')</title> 
 

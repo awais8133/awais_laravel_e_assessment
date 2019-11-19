@@ -21,17 +21,21 @@
             <ul class="navbar-nav ml-auto navbar-right">
                 @yield('right-links')
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="{{route('teachers.classes.create')}}">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    Hello <span class="p-c">Username</span>
+                    Hello <span class="p-c">{{Session::get('name')}}</span>
                 </li>
                 <li class="nav-item">
-                    {{-- <img class="person-logo" src="images/Person-Logo.png" alt="Person-Logo.png"> --}}
-                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                <img class="person-logo" src="{{asset('storage/'.Session::get('image'))}}" alt="Person-Logo.png">
+                    {{-- <i class="fa fa-user-o" aria-hidden="true"></i> --}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="{{route('auth.logout')}}">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -43,7 +47,7 @@
         @yield('hero-section')
 
     </div>
-    
+
     <div class="container">
 
         @include('partials._messages')

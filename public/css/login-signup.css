@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 :root {
     --primary-color: #2699FB;
     --secondary-color: #fff;
@@ -70,12 +71,15 @@ form .form-group input{
     outline: none;
     border: 1px solid var(--primary-color);
     padding: 0.5rem 1rem ;
-    margin-bottom: 1.2rem;
     font-size: 1.2rem;
 }
 
 form .row{
     display: flex;    
+    margin-bottom: 1rem;
+}
+
+.form-group{
     margin-bottom: 1rem;
 }
 
@@ -116,4 +120,9 @@ form .row .col label{
 
 .signup:hover{
     text-decoration: underline;
+}
+
+
+.text-red{
+    color: crimson;
 }

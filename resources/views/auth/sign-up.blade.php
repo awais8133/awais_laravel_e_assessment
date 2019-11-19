@@ -33,20 +33,23 @@
             <div class="form-container">
 
                 <h1 class="center title">E-Assessment System</h1>
-                <form method="post" action="#">
+                <form method="post" action="{{route('auth.sign-up')}}" enctype="multipart/form-data">
                     <h1 class="center title">Signup</h1>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}" />
                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" autocomplete="off" />
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" autocomplete="off" />
+                        <span class="text-red">{{$errors->first('name')}}</span>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" class="form-control" autocomplete="off" />
+                        <span class="text-red">{{$errors->first('email')}}</span>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input type="password" name="password" class="form-control" autocomplete="off" />
+                        <span class="text-red">{{$errors->first('password')}}</span>
                     </div>
 
                     <div class="row">
@@ -63,11 +66,13 @@
                                 <label class="form-check-label" for="exampleRadios2"> Teacher </label>
                             </div>
                         </div>
+                        <span class="text-red">{{$errors->first('type')}}</span>
                     </div>
 
                     <div class="form-group mb-4">
-                        <label for="exampleFormControlFile1">Choose Image</label>
-                        <input type="file" class="form-control-file" accept="image/*">
+                        <label>Choose Image</label>
+                        <input type="file" class="form-control-file" name="image" accept="image/*">
+                        <span class="text-red">{{$errors->first('image')}}</span>
                     </div>
 
 
