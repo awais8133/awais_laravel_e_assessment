@@ -17,7 +17,7 @@
 
 <div class="row mb-4">
     <div class="col text-right">
-        <a href="#" class="btn btn-primary btn-lg">Add Category</a>
+        <a href=  '{{ url("/teachers.categories/add-category/{$id}")}}' class="btn btn-primary btn-lg">Add Category</a>
     </div>
 </div>
 
@@ -31,38 +31,20 @@
         </tr>
     </thead>
     <tbody>
+
+    @foreach ($categories as $category)
+        
         <tr>
-            <th scope="row">1</th>
-            <td>Introduction To Programming</td>
+            <th scope="row">{{$category->id}}</th>
+            <td>{{$category->name}}</td>
             <td class="text-right">
                 <a href="#" class="btn btn-outline-dark">Update</a>    
                 <a href="#" class="btn btn-outline-danger">Delete</a>    
             </td>
         </tr> 
-        <tr>
-            <th scope="row">1</th>
-            <td>Introduction To Programming</td>
-            <td class="text-right">
-                <a href="#" class="btn btn-outline-dark">Update</a>    
-                <a href="#" class="btn btn-outline-danger">Delete</a>    
-            </td>
-        </tr> 
-        <tr>
-            <th scope="row">1</th>
-            <td>Introduction To Programming</td>
-            <td class="text-right">
-                <a href="#" class="btn btn-outline-dark">Update</a>    
-                <a href="#" class="btn btn-outline-danger">Delete</a>    
-            </td>
-        </tr> 
-        <tr>
-            <th scope="row">1</th>
-            <td>Introduction To Programming</td>
-            <td class="text-right">
-                <a href="#" class="btn btn-outline-dark">Update</a>    
-                <a href="#" class="btn btn-outline-danger">Delete</a>    
-            </td>
-        </tr> 
+       @endforeach
+        
+         
     </tbody>
 </table>
 

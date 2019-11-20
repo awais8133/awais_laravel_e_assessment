@@ -25,8 +25,15 @@ Route::get('/teachers/classes','TeacherController@index')->name('teachers.classe
 
 Route::get('/teachers/classes/create','EclassController@create')->name('teachers.classes.create');
 Route::post('/teachers/classes/create','EclassController@store')->name('teachers.classes.store');
+Route::post('/teachers/classes/create','EclassController@store')->name('teachers.classes.store');
+Route::get('/teachers/classes/openclass/{id}','EclassController@openclass');
+Route::get('/teachers/subjects/set-subject/{id}','SubjectsController@indexwith_id');
+Route::post('/teachers/subjects/set-subject/{id}','SubjectsController@set_subject');
+Route::resource('subject','SubjectsController');
 
-
+Route::get('/teachers.categories/index-categories/{id}','CategoryController@index');
+Route::get('/teachers.categories/add-category/{id}','CategoryController@addcategory');
+Route::post('/teachers.categories/store-category/{id}','CategoryController@storecategory');
 
 // Route::get('create-class',function(){
 //     return view('class.create-class');

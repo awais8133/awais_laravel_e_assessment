@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEclassesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateEclassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('eclasses', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('section');
-            $table->string('code')->unique();
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('sub_id');
+            $table->foreign('sub_id')->references('id')->on('subjects');
+            
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateEclassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eclasses');
+        Schema::dropIfExists('categories');
     }
 }

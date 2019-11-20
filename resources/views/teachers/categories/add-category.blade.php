@@ -14,7 +14,7 @@
 
 @section('content')
 
-<form method="post" action="#">
+<form method="post" action="{{url('/teachers.categories/store-category',($id))}}">
     <input name="_token" type="hidden" value="{{ csrf_token() }}" />    
     <div class="form-group">
         <label>Name</label>

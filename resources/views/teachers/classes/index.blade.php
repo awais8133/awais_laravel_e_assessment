@@ -29,8 +29,7 @@
 
         <strong>Class Code</strong>
         <p class="card-text">{{$class->code}}</p>
-        
-        <a href="#" class="btn btn-primary">Open</a>
+        <a href=  '{{ url("/teachers/classes/openclass/{$class->id}") }}' class="btn btn-primary">Open</a>
       </div>
     </div>
   </div>

@@ -14,4 +14,5 @@ class TeacherController extends Controller
         $user = User::find(Session::get('id'));
         return view('teachers.classes.index',compact('user'));
     }
+    
 }

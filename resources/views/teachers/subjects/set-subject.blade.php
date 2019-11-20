@@ -16,19 +16,17 @@
 @section('content')
 
 
-<form method="post" action="#">
+<form method="post" action="{{url('/teachers/subjects/set-subject',($id))}}">
     <input name="_token" type="hidden" value="{{ csrf_token() }}" />
     <div class="form-group">
         <label for="exampleFormControlSelect1">Select subject name</label>
-        <select class="form-control">
-            <option>CS-101</option>
-            <option>CS-102</option>
-            <option>CS-103</option>
-            <option>CS-201</option>
-            <option>CS-203</option>
-            <option>CS-401</option>
-            <option>CS-420</option>
+       
+        <select class="form-control" name="subject">
+        @foreach ($subject as $subject)
+            <option value="{{$subject->id}}" >{{$subject->name}}</option>
+            @endforeach
         </select>
+       
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>

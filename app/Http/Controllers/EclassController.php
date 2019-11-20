@@ -13,6 +13,12 @@ class EclassController extends Controller
         return view('teachers.classes.create');
     }
 
+    public function openclass($id)
+    {
+         
+        return view('teachers.classes.openclass',compact('id'));
+    }
+
     public function store(Request $request)
     {
         $data = request()->validate([
@@ -21,6 +27,7 @@ class EclassController extends Controller
             'code' => 'required|min:6',
             ]);
 
+            
         $user = User::find(Session::get('id'));
         if($user){
 
@@ -28,6 +35,7 @@ class EclassController extends Controller
                 'name' => $request->name,
                 'section' => $request->section,
                 'code' => $request->code,
+                'sub_id'=>0,
                 ]);
                 
                 return redirect(route('teachers.classes.index'));

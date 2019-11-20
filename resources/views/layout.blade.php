@@ -24,8 +24,8 @@
                         Populate Repository
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Class Subject</a>
-                        <a class="dropdown-item" href="#">Maintain Categories</a>
+                        <a class="dropdown-item" href=  '{{ url("/teachers/subjects/set-subject/{$id}")}}'>Class Subject</a>
+                        <a class="dropdown-item" href=  '{{ url("/teachers.categories/index-categories/{$id}")}}'>Maintain Categories</a>
                         {{-- <div class="dropdown-divider"></div> --}}
                         <a class="dropdown-item" href="#">Maintain Questions</a>
                     </div>
